@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+
+  <!-- Aviso de Cookies -->
+  <dialog id="cookieDialog">
+    <div>
+      <p>Este sitio web utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta su uso.</p>
+      <button id="acceptCookies">Aceptar</button>
+    </div>
+  </dialog>
+
+  <!-- Contenedor de las tarjetas de producto -->
+  <div id="productContainer" class="product-container"></div>
+
+  <!-- Template para las tarjetas de producto -->
+  <template id="productCardTemplate">
+    <div class="card">
+      <img src="img/close-up-elegant-beauty-selfcare-treatment.jpg" alt="Producto" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title"><slot name="title"></slot></h3>
+        <p class="card-description"><slot name="description"></slot></p>
+        <p class="card-price"><slot name="price"></slot></p>
+        <div class="card-buttons">
+          <button class="btn-like">💖 Me gusta</button>
+          <button class="btn-add-to-cart">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="cookies.js"></script>
+</body>
+</html>
